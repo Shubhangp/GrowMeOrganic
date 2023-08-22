@@ -13,6 +13,8 @@ interface FormModel{
 const ValidateForm = Yup.object().shape({
     name: Yup.string()
         .required('*Name is required')
+        .trim('*Empty spaces are not allowed')
+        .matches(/^[0-9a-zA-Z\s]+$/, '*Invalid name')
         .min(2, '*Name is too short'),
     phone: Yup.string()
         .required('*Phone Number is required')
@@ -22,6 +24,7 @@ const ValidateForm = Yup.object().shape({
     email: Yup.string()
         .required('*Email is required!')
         .email('*Invalid Email')
+        .matches(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/, '*Invalid Email')
 });
 
 const SignUp = () => {
