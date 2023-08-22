@@ -17,7 +17,7 @@ const SecondPage = () => {
 
     const navigate = useNavigate();
     const formDetail = JSON.parse(localStorage.getItem('form') || '{}');
-    console.log(formDetail);
+    // console.log(formDetail);
     
     if (!formDetail.name || !formDetail.phone || !formDetail.email) {
         alert('Please SignUp first');
