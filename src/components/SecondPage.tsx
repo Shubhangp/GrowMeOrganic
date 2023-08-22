@@ -18,12 +18,19 @@ const SecondPage = () => {
     const navigate = useNavigate();
     const formDetail = JSON.parse(localStorage.getItem('form') || '{}');
     // console.log(formDetail);
+
+    useEffect(() => {
+        checkDetail();
+    });
+
+    const checkDetail = () => {
+        if (!formDetail.name || !formDetail.phone || !formDetail.email) {
+            alert('Please SignUp first');
+            navigate('/');
+            return null;
+        }
+    }    
     
-    if (!formDetail.name || !formDetail.phone || !formDetail.email) {
-        alert('Please SignUp first');
-        navigate('/');
-        return null;
-    }
 
     return (
         <>
