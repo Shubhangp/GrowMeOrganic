@@ -10,7 +10,7 @@ interface FormModel{
     email: string
 }
 
-const MyFormValidation = Yup.object().shape({
+const ValidateForm = Yup.object().shape({
     name: Yup.string()
         .required('*Name is required')
         .min(2, '*Name is too short'),
@@ -38,7 +38,7 @@ const SignUp = () => {
                         phone: "",
                         email: ""
                     }}
-                    validationSchema={MyFormValidation}
+                    validationSchema={ValidateForm}
                     onSubmit={(values) => {
                         localStorage.setItem('form', JSON.stringify(values));
                         navigate('/second-page');
