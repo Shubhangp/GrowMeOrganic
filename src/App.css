@@ -1,0 +1,52 @@
+#root {
+  width: 100vw;
+  height: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background: #ffd000;
+}
+
+.form_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+  gap: 50px;
+}
+
+.input_container{
+  width: 40%;
+  position: relative;
+}
+
+@media (max-width: 800px) {
+  .input_container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 800px) {
+  .input_container {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .input_container {
+    width: 40%;
+  }
+}
+
+.input {
+  width: 100%;
+}
+
+.error {
+  position: absolute;
+  font-size: 15px;
+  color: #f00;
+  right: 0;
+  top: 40px;
+}
